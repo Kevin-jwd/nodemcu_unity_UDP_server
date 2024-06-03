@@ -3,6 +3,8 @@ import sys
 
 serverName = '127.0.0.1'        # MY_SERVER_ADDRESS
 serverPort = 12000              # PORT
+serverName = ''        # MY_SERVER_ADDRESS
+serverPort =           # PORT
 
 # socket() : 소켓 객체 생성
 # 1) 주소 체계(family)
@@ -23,4 +25,5 @@ while True:
     data, address = serverSocket.recvfrom(1024)
 
     print('received {} bytes from {}'.format(len(data), address))
-    print(data.decode())
+    if data.decode() == 'okgoogle':
+        print(data.decode())
